@@ -1,0 +1,12 @@
+black
+colorama
+coverage
+coveralls
+flake8
+hypothesis
+mypy
+pytest
+pyyaml
+setuptools
+twine
+wheel
