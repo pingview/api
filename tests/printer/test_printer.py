@@ -3,7 +3,6 @@
 import os
 
 from api.printer.printer import Printer, PrinterException
-from api.proto.proto import Format, Type
 
 
 def test_exception():
@@ -12,20 +11,7 @@ def test_exception():
 
 
 def test_printer():
-    buf = [
-        {
-            Format.FILE: "name1",
-            Format.LINE: 1,
-            Format.TYPE: Type.ERROR,
-            Format.DETAILS: "text1",
-        },
-        {
-            Format.FILE: "name2",
-            Format.LINE: 2,
-            Format.TYPE: Type.WARN,
-            Format.DETAILS: "text2",
-        },
-    ]
+    buf = []
 
     printer = Printer()
 
