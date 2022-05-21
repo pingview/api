@@ -1,0 +1,36 @@
+{
+    "path": {
+        "name": {
+            "start": 2,
+            "end": 3
+        }
+    },
+    "endpoints": [
+        {
+            "name": {
+                "start": 9,
+                "end": 10
+            },
+            "apis": [
+                {
+                    "description": {
+                        "start": 12,
+                        "end": 13
+                    },
+                    "name": {
+                        "start": 14,
+                        "end": 15
+                    },
+                    "request": {
+                        "start": 28,
+                        "end": 38
+                    },
+                    "response": {
+                        "start": 45,
+                        "end": 68
+                    }
+                }
+            ]
+        }
+    ]
+}

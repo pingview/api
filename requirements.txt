@@ -7,6 +7,7 @@ hypothesis
 mypy
 pytest
 pyyaml
+requests
 setuptools
 twine
 wheel

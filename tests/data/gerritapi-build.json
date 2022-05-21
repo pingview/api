@@ -1,0 +1,193 @@
+{
+  "changes": {
+    "/changes/": {
+      "post": {
+        "summary": "/changes",
+        "x-apifox-folder": "changes",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "Create Change",
+        "tags": [
+          "changes"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "project": {
+                    "type": "string"
+                  },
+                  "subject": {
+                    "type": "string"
+                  },
+                  "branch": {
+                    "type": "string"
+                  },
+                  "topic": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "project",
+                  "subject",
+                  "branch",
+                  "topic",
+                  "status"
+                ],
+                "x-apifox-orders": [
+                  "project",
+                  "subject",
+                  "branch",
+                  "topic",
+                  "status"
+                ],
+                "x-apifox-ignore-properties": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "project": {
+                      "type": "string"
+                    },
+                    "branch": {
+                      "type": "string"
+                    },
+                    "topic": {
+                      "type": "string"
+                    },
+                    "change_id": {
+                      "type": "string"
+                    },
+                    "subject": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "created": {
+                      "type": "string"
+                    },
+                    "updated": {
+                      "type": "string"
+                    },
+                    "mergeable": {
+                      "type": "boolean"
+                    },
+                    "insertions": {
+                      "type": "integer"
+                    },
+                    "deletions": {
+                      "type": "integer"
+                    },
+                    "_number": {
+                      "type": "integer"
+                    },
+                    "owner": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "x-apifox-orders": [
+                        "name"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "project",
+                    "branch",
+                    "topic",
+                    "change_id",
+                    "subject",
+                    "status",
+                    "created",
+                    "updated",
+                    "mergeable",
+                    "insertions",
+                    "deletions",
+                    "_number",
+                    "owner"
+                  ],
+                  "x-apifox-orders": [
+                    "id",
+                    "project",
+                    "branch",
+                    "topic",
+                    "change_id",
+                    "subject",
+                    "status",
+                    "created",
+                    "updated",
+                    "mergeable",
+                    "insertions",
+                    "deletions",
+                    "_number",
+                    "owner"
+                  ],
+                  "x-apifox-ignore-properties": []
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例 ",
+                    "value": {
+                      "id": "myProject~master~I8473b95934b5732ac55d26311a706c9c2bde9941",
+                      "project": "myProject",
+                      "branch": "master",
+                      "topic": "create-change-in-browser",
+                      "change_id": "I8473b95934b5732ac55d26311a706c9c2bde9941",
+                      "subject": "Let's support 100% Gerrit workflow direct in browser",
+                      "status": "NEW",
+                      "created": "2014-05-05 07:15:44.639000000",
+                      "updated": "2014-05-05 07:15:44.639000000",
+                      "mergeable": true,
+                      "insertions": 0,
+                      "deletions": 0,
+                      "_number": 4711,
+                      "owner": {
+                        "name": "John Doe"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

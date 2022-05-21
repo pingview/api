@@ -1,0 +1,27 @@
+:linkattrs:
+= Gerrit Code Review - /changes/ REST API
+
+This page describes the change related REST endpoints.
+Please also take note of the general information on the
+link:rest-api.html[REST API].
+
+[[change-endpoints]]
+== Change Endpoints
+
+[[delete-topic]]
+=== Delete Topic
+--
+'DELETE /changes/link:#change-id[\{change-id\}]/topic'
+--
+
+Deletes the topic of a change.
+
+.Request
+----
+  DELETE /changes/myProject~master~I8473b95934b5732ac55d26311a706c9c2bde9940/topic HTTP/1.0
+----
+
+.Response
+----
+  HTTP/1.1 204 No Content
+----

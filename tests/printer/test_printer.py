@@ -15,12 +15,12 @@ def test_printer():
 
     printer = Printer()
 
-    name = "printer.json"
-    printer.run(data=buf, name=name, append=False)
+    name = "output.json"
+    printer.run(data=buf, name=name)
     assert os.path.isfile(name)
     os.remove(name)
 
-    name = "printer.yml"
-    printer.run(data=buf, name=name, append=False)
+    name = "output.yml"
+    printer.run(data=buf, name=name)
     assert os.path.isfile(name)
     os.remove(name)

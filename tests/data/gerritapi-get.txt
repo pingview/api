@@ -1,0 +1,70 @@
+:linkattrs:
+= Gerrit Code Review - /changes/ REST API
+
+This page describes the change related REST endpoints.
+Please also take note of the general information on the
+link:rest-api.html[REST API].
+
+[[change-endpoints]]
+== Change Endpoints
+
+[[get-change]]
+=== Get Change
+--
+'GET /changes/link:#change-id[\{change-id\}]'
+--
+
+Retrieves a change.
+
+Additional fields can be obtained by adding `o` parameters, each
+option requires more database lookups and slows down the query
+response time to the client so they are generally disabled by
+default. Fields are described in link:#list-changes[Query Changes].
+
+.Request
+----
+  GET /changes/myProject~master~I8473b95934b5732ac55d26311a706c9c2bde9940 HTTP/1.0
+----
+
+As response a link:#change-info[ChangeInfo] entity is returned that
+describes the change.
+
+.Response
+----
+  HTTP/1.1 200 OK
+  Content-Disposition: attachment
+  Content-Type: application/json; charset=UTF-8
+
+  )]}'
+  {
+    "id": "myProject~master~I8473b95934b5732ac55d26311a706c9c2bde9940",
+    "project": "myProject",
+    "branch": "master",
+    "attention_set": [
+      {
+        "account": {
+          "name": "John Doe"
+        },
+       "last_update": "2013-02-21 11:16:36.775000000",
+       "reason": "reviewer or cc replied"
+      }
+    ]
+    "change_id": "I8473b95934b5732ac55d26311a706c9c2bde9940",
+    "subject": "Implementing Feature X",
+    "status": "NEW",
+    "created": "2013-02-01 09:59:32.126000000",
+    "updated": "2013-02-21 11:16:36.775000000",
+    "mergeable": true,
+    "insertions": 34,
+    "deletions": 101,
+    "_number": 3965,
+    "owner": {
+      "name": "John Doe"
+    }
+  }
+----
+
+Historical state of the change can be retrieved by specifying the
+`meta=SHA-1` parameter. This will use a historical NoteDb snapshot to
+populate ChangeInfo. If the SHA-1 is not reachable as a NoteDb state,
+status code 412 is returned.

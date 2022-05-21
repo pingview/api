@@ -1,0 +1,2252 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "openapi-test",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "access"
+    },
+    {
+      "name": "changes"
+    }
+  ],
+  "paths": {
+    "/changes/{change-id}": {
+      "delete": {
+        "summary": "/changes",
+        "x-apifox-folder": "changes",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "Delete Change",
+        "tags": [
+          "changes"
+        ],
+        "parameters": [
+          {
+            "name": "change-id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                },
+                "examples": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/access/": {
+      "get": {
+        "summary": "/access",
+        "x-apifox-folder": "access",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "List Access Rights",
+        "tags": [
+          "access"
+        ],
+        "parameters": [
+          {
+            "name": "project",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "All-Projects": {
+                      "type": "object",
+                      "properties": {
+                        "revision": {
+                          "type": "string"
+                        },
+                        "local": {
+                          "type": "object",
+                          "properties": {
+                            "GLOBAL_CAPABILITIES": {
+                              "type": "object",
+                              "properties": {
+                                "permissions": {
+                                  "type": "object",
+                                  "properties": {
+                                    "priority": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "15bfcd8a6de1a69c50b30cedcdcc951c15703152": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "15bfcd8a6de1a69c50b30cedcdcc951c15703152"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "15bfcd8a6de1a69c50b30cedcdcc951c15703152"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    },
+                                    "streamEvents": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "15bfcd8a6de1a69c50b30cedcdcc951c15703152": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "15bfcd8a6de1a69c50b30cedcdcc951c15703152"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "15bfcd8a6de1a69c50b30cedcdcc951c15703152"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    },
+                                    "administrateServer": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "53a4f647a89ea57992571187d8025f830625192a": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "53a4f647a89ea57992571187d8025f830625192a"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "53a4f647a89ea57992571187d8025f830625192a"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    }
+                                  },
+                                  "required": [
+                                    "priority",
+                                    "streamEvents",
+                                    "administrateServer"
+                                  ],
+                                  "x-apifox-orders": [
+                                    "priority",
+                                    "streamEvents",
+                                    "administrateServer"
+                                  ],
+                                  "x-apifox-ignore-properties": []
+                                }
+                              },
+                              "required": [
+                                "permissions"
+                              ],
+                              "x-apifox-orders": [
+                                "permissions"
+                              ],
+                              "x-apifox-ignore-properties": []
+                            },
+                            "refs/meta/config": {
+                              "type": "object",
+                              "properties": {
+                                "permissions": {
+                                  "type": "object",
+                                  "properties": {
+                                    "submit": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "53a4f647a89ea57992571187d8025f830625192a": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            },
+                                            "global:Project-Owners": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    },
+                                    "label-Code-Review": {
+                                      "type": "object",
+                                      "properties": {
+                                        "label": {
+                                          "type": "string"
+                                        },
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "53a4f647a89ea57992571187d8025f830625192a": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                },
+                                                "min": {
+                                                  "type": "integer"
+                                                },
+                                                "max": {
+                                                  "type": "integer"
+                                                }
+                                              },
+                                              "required": [
+                                                "action",
+                                                "min",
+                                                "max"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action",
+                                                "min",
+                                                "max"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            },
+                                            "global:Project-Owners": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                },
+                                                "min": {
+                                                  "type": "integer"
+                                                },
+                                                "max": {
+                                                  "type": "integer"
+                                                }
+                                              },
+                                              "required": [
+                                                "action",
+                                                "min",
+                                                "max"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action",
+                                                "min",
+                                                "max"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "label",
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "label",
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    },
+                                    "read": {
+                                      "type": "object",
+                                      "properties": {
+                                        "exclusive": {
+                                          "type": "boolean"
+                                        },
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "53a4f647a89ea57992571187d8025f830625192a": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            },
+                                            "global:Project-Owners": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "exclusive",
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "exclusive",
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    },
+                                    "push": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "53a4f647a89ea57992571187d8025f830625192a": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            },
+                                            "global:Project-Owners": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    }
+                                  },
+                                  "required": [
+                                    "submit",
+                                    "label-Code-Review",
+                                    "read",
+                                    "push"
+                                  ],
+                                  "x-apifox-orders": [
+                                    "submit",
+                                    "label-Code-Review",
+                                    "read",
+                                    "push"
+                                  ],
+                                  "x-apifox-ignore-properties": []
+                                }
+                              },
+                              "required": [
+                                "permissions"
+                              ],
+                              "x-apifox-orders": [
+                                "permissions"
+                              ],
+                              "x-apifox-ignore-properties": []
+                            },
+                            "refs/for/refs/*": {
+                              "type": "object",
+                              "properties": {
+                                "permissions": {
+                                  "type": "object",
+                                  "properties": {
+                                    "pushMerge": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "global:Registered-Users": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "global:Registered-Users"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "global:Registered-Users"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    },
+                                    "push": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "global:Registered-Users": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "global:Registered-Users"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "global:Registered-Users"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    }
+                                  },
+                                  "required": [
+                                    "pushMerge",
+                                    "push"
+                                  ],
+                                  "x-apifox-orders": [
+                                    "pushMerge",
+                                    "push"
+                                  ],
+                                  "x-apifox-ignore-properties": []
+                                }
+                              },
+                              "required": [
+                                "permissions"
+                              ],
+                              "x-apifox-orders": [
+                                "permissions"
+                              ],
+                              "x-apifox-ignore-properties": []
+                            },
+                            "refs/tags/*": {
+                              "type": "object",
+                              "properties": {
+                                "permissions": {
+                                  "type": "object",
+                                  "properties": {
+                                    "createSignedTag": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "53a4f647a89ea57992571187d8025f830625192a": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            },
+                                            "global:Project-Owners": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    },
+                                    "createTag": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "53a4f647a89ea57992571187d8025f830625192a": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            },
+                                            "global:Project-Owners": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    }
+                                  },
+                                  "required": [
+                                    "createSignedTag",
+                                    "createTag"
+                                  ],
+                                  "x-apifox-orders": [
+                                    "createSignedTag",
+                                    "createTag"
+                                  ],
+                                  "x-apifox-ignore-properties": []
+                                }
+                              },
+                              "required": [
+                                "permissions"
+                              ],
+                              "x-apifox-orders": [
+                                "permissions"
+                              ],
+                              "x-apifox-ignore-properties": []
+                            },
+                            "refs/heads/*": {
+                              "type": "object",
+                              "properties": {
+                                "permissions": {
+                                  "type": "object",
+                                  "properties": {
+                                    "forgeCommitter": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "53a4f647a89ea57992571187d8025f830625192a": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            },
+                                            "global:Project-Owners": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    },
+                                    "forgeAuthor": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "global:Registered-Users": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "global:Registered-Users"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "global:Registered-Users"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    },
+                                    "submit": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "53a4f647a89ea57992571187d8025f830625192a": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            },
+                                            "global:Project-Owners": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    },
+                                    "editTopicName": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "53a4f647a89ea57992571187d8025f830625192a": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                },
+                                                "force": {
+                                                  "type": "boolean"
+                                                }
+                                              },
+                                              "required": [
+                                                "action",
+                                                "force"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action",
+                                                "force"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            },
+                                            "global:Project-Owners": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                },
+                                                "force": {
+                                                  "type": "boolean"
+                                                }
+                                              },
+                                              "required": [
+                                                "action",
+                                                "force"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action",
+                                                "force"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    },
+                                    "label-Code-Review": {
+                                      "type": "object",
+                                      "properties": {
+                                        "label": {
+                                          "type": "string"
+                                        },
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "global:Registered-Users": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                },
+                                                "min": {
+                                                  "type": "integer"
+                                                },
+                                                "max": {
+                                                  "type": "integer"
+                                                }
+                                              },
+                                              "required": [
+                                                "action",
+                                                "min",
+                                                "max"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action",
+                                                "min",
+                                                "max"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            },
+                                            "53a4f647a89ea57992571187d8025f830625192a": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                },
+                                                "min": {
+                                                  "type": "integer"
+                                                },
+                                                "max": {
+                                                  "type": "integer"
+                                                }
+                                              },
+                                              "required": [
+                                                "action",
+                                                "min",
+                                                "max"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action",
+                                                "min",
+                                                "max"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            },
+                                            "global:Project-Owners": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                },
+                                                "min": {
+                                                  "type": "integer"
+                                                },
+                                                "max": {
+                                                  "type": "integer"
+                                                }
+                                              },
+                                              "required": [
+                                                "action",
+                                                "min",
+                                                "max"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action",
+                                                "min",
+                                                "max"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "global:Registered-Users",
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "global:Registered-Users",
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "label",
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "label",
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    },
+                                    "create": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "53a4f647a89ea57992571187d8025f830625192a": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            },
+                                            "global:Project-Owners": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    },
+                                    "push": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "53a4f647a89ea57992571187d8025f830625192a": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            },
+                                            "global:Project-Owners": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "53a4f647a89ea57992571187d8025f830625192a",
+                                            "global:Project-Owners"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    }
+                                  },
+                                  "required": [
+                                    "forgeCommitter",
+                                    "forgeAuthor",
+                                    "submit",
+                                    "editTopicName",
+                                    "label-Code-Review",
+                                    "create",
+                                    "push"
+                                  ],
+                                  "x-apifox-orders": [
+                                    "forgeCommitter",
+                                    "forgeAuthor",
+                                    "submit",
+                                    "editTopicName",
+                                    "label-Code-Review",
+                                    "create",
+                                    "push"
+                                  ],
+                                  "x-apifox-ignore-properties": []
+                                }
+                              },
+                              "required": [
+                                "permissions"
+                              ],
+                              "x-apifox-orders": [
+                                "permissions"
+                              ],
+                              "x-apifox-ignore-properties": []
+                            },
+                            "refs/*": {
+                              "type": "object",
+                              "properties": {
+                                "permissions": {
+                                  "type": "object",
+                                  "properties": {
+                                    "read": {
+                                      "type": "object",
+                                      "properties": {
+                                        "rules": {
+                                          "type": "object",
+                                          "properties": {
+                                            "global:Anonymous-Users": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            },
+                                            "53a4f647a89ea57992571187d8025f830625192a": {
+                                              "type": "object",
+                                              "properties": {
+                                                "action": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "action"
+                                              ],
+                                              "x-apifox-orders": [
+                                                "action"
+                                              ],
+                                              "x-apifox-ignore-properties": []
+                                            }
+                                          },
+                                          "required": [
+                                            "global:Anonymous-Users",
+                                            "53a4f647a89ea57992571187d8025f830625192a"
+                                          ],
+                                          "x-apifox-orders": [
+                                            "global:Anonymous-Users",
+                                            "53a4f647a89ea57992571187d8025f830625192a"
+                                          ],
+                                          "x-apifox-ignore-properties": []
+                                        }
+                                      },
+                                      "required": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-orders": [
+                                        "rules"
+                                      ],
+                                      "x-apifox-ignore-properties": []
+                                    }
+                                  },
+                                  "required": [
+                                    "read"
+                                  ],
+                                  "x-apifox-orders": [
+                                    "read"
+                                  ],
+                                  "x-apifox-ignore-properties": []
+                                }
+                              },
+                              "required": [
+                                "permissions"
+                              ],
+                              "x-apifox-orders": [
+                                "permissions"
+                              ],
+                              "x-apifox-ignore-properties": []
+                            }
+                          },
+                          "required": [
+                            "GLOBAL_CAPABILITIES",
+                            "refs/meta/config",
+                            "refs/for/refs/*",
+                            "refs/tags/*",
+                            "refs/heads/*",
+                            "refs/*"
+                          ],
+                          "x-apifox-orders": [
+                            "GLOBAL_CAPABILITIES",
+                            "refs/meta/config",
+                            "refs/for/refs/*",
+                            "refs/tags/*",
+                            "refs/heads/*",
+                            "refs/*"
+                          ],
+                          "x-apifox-ignore-properties": []
+                        },
+                        "is_owner": {
+                          "type": "boolean"
+                        },
+                        "owner_of": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "can_upload": {
+                          "type": "boolean"
+                        },
+                        "can_add": {
+                          "type": "boolean"
+                        },
+                        "can_add_tags": {
+                          "type": "boolean"
+                        },
+                        "config_visible": {
+                          "type": "boolean"
+                        },
+                        "groups": {
+                          "type": "object",
+                          "properties": {
+                            "53a4f647a89ea57992571187d8025f830625192a": {
+                              "type": "object",
+                              "properties": {
+                                "url": {
+                                  "type": "string"
+                                },
+                                "options": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "x-apifox-orders": [],
+                                  "x-apifox-ignore-properties": []
+                                },
+                                "description": {
+                                  "type": "string"
+                                },
+                                "group_id": {
+                                  "type": "integer"
+                                },
+                                "owner": {
+                                  "type": "string"
+                                },
+                                "owner_id": {
+                                  "type": "string"
+                                },
+                                "created_on": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "url",
+                                "options",
+                                "description",
+                                "group_id",
+                                "owner",
+                                "owner_id",
+                                "created_on",
+                                "name"
+                              ],
+                              "x-apifox-orders": [
+                                "url",
+                                "options",
+                                "description",
+                                "group_id",
+                                "owner",
+                                "owner_id",
+                                "created_on",
+                                "name"
+                              ],
+                              "x-apifox-ignore-properties": []
+                            },
+                            "global:Registered-Users": {
+                              "type": "object",
+                              "properties": {
+                                "options": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "x-apifox-orders": [],
+                                  "x-apifox-ignore-properties": []
+                                },
+                                "name": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "options",
+                                "name"
+                              ],
+                              "x-apifox-orders": [
+                                "options",
+                                "name"
+                              ],
+                              "x-apifox-ignore-properties": []
+                            },
+                            "global:Project-Owners": {
+                              "type": "object",
+                              "properties": {
+                                "options": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "x-apifox-orders": [],
+                                  "x-apifox-ignore-properties": []
+                                },
+                                "name": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "options",
+                                "name"
+                              ],
+                              "x-apifox-orders": [
+                                "options",
+                                "name"
+                              ],
+                              "x-apifox-ignore-properties": []
+                            },
+                            "15bfcd8a6de1a69c50b30cedcdcc951c15703152": {
+                              "type": "object",
+                              "properties": {
+                                "url": {
+                                  "type": "string"
+                                },
+                                "options": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "x-apifox-orders": [],
+                                  "x-apifox-ignore-properties": []
+                                },
+                                "description": {
+                                  "type": "string"
+                                },
+                                "group_id": {
+                                  "type": "integer"
+                                },
+                                "owner": {
+                                  "type": "string"
+                                },
+                                "owner_id": {
+                                  "type": "string"
+                                },
+                                "created_on": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "url",
+                                "options",
+                                "description",
+                                "group_id",
+                                "owner",
+                                "owner_id",
+                                "created_on",
+                                "name"
+                              ],
+                              "x-apifox-orders": [
+                                "url",
+                                "options",
+                                "description",
+                                "group_id",
+                                "owner",
+                                "owner_id",
+                                "created_on",
+                                "name"
+                              ],
+                              "x-apifox-ignore-properties": []
+                            },
+                            "global:Anonymous-Users": {
+                              "type": "object",
+                              "properties": {
+                                "options": {
+                                  "type": "object",
+                                  "properties": {},
+                                  "x-apifox-orders": [],
+                                  "x-apifox-ignore-properties": []
+                                },
+                                "name": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "options",
+                                "name"
+                              ],
+                              "x-apifox-orders": [
+                                "options",
+                                "name"
+                              ],
+                              "x-apifox-ignore-properties": []
+                            }
+                          },
+                          "required": [
+                            "53a4f647a89ea57992571187d8025f830625192a",
+                            "global:Registered-Users",
+                            "global:Project-Owners",
+                            "15bfcd8a6de1a69c50b30cedcdcc951c15703152",
+                            "global:Anonymous-Users"
+                          ],
+                          "x-apifox-orders": [
+                            "53a4f647a89ea57992571187d8025f830625192a",
+                            "global:Registered-Users",
+                            "global:Project-Owners",
+                            "15bfcd8a6de1a69c50b30cedcdcc951c15703152",
+                            "global:Anonymous-Users"
+                          ],
+                          "x-apifox-ignore-properties": []
+                        }
+                      },
+                      "required": [
+                        "revision",
+                        "local",
+                        "is_owner",
+                        "owner_of",
+                        "can_upload",
+                        "can_add",
+                        "can_add_tags",
+                        "config_visible",
+                        "groups"
+                      ],
+                      "x-apifox-orders": [
+                        "revision",
+                        "local",
+                        "is_owner",
+                        "owner_of",
+                        "can_upload",
+                        "can_add",
+                        "can_add_tags",
+                        "config_visible",
+                        "groups"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    },
+                    "MyProject": {
+                      "type": "object",
+                      "properties": {
+                        "revision": {
+                          "type": "string"
+                        },
+                        "inherits_from": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "description": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "name",
+                            "description"
+                          ],
+                          "x-apifox-orders": [
+                            "id",
+                            "name",
+                            "description"
+                          ],
+                          "x-apifox-ignore-properties": []
+                        },
+                        "local": {
+                          "type": "object",
+                          "properties": {},
+                          "x-apifox-orders": [],
+                          "x-apifox-ignore-properties": []
+                        },
+                        "is_owner": {
+                          "type": "boolean"
+                        },
+                        "owner_of": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "can_upload": {
+                          "type": "boolean"
+                        },
+                        "can_add": {
+                          "type": "boolean"
+                        },
+                        "can_add_tags": {
+                          "type": "boolean"
+                        },
+                        "config_visible": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "revision",
+                        "inherits_from",
+                        "local",
+                        "is_owner",
+                        "owner_of",
+                        "can_upload",
+                        "can_add",
+                        "can_add_tags",
+                        "config_visible"
+                      ],
+                      "x-apifox-orders": [
+                        "revision",
+                        "inherits_from",
+                        "local",
+                        "is_owner",
+                        "owner_of",
+                        "can_upload",
+                        "can_add",
+                        "can_add_tags",
+                        "config_visible"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    }
+                  },
+                  "required": [
+                    "All-Projects",
+                    "MyProject"
+                  ],
+                  "x-apifox-orders": [
+                    "All-Projects",
+                    "MyProject"
+                  ],
+                  "x-apifox-ignore-properties": []
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例 ",
+                    "value": {
+                      "All-Projects": {
+                        "revision": "edd453d18e08640e67a8c9a150cec998ed0ac9aa",
+                        "local": {
+                          "GLOBAL_CAPABILITIES": {
+                            "permissions": {
+                              "priority": {
+                                "rules": {
+                                  "15bfcd8a6de1a69c50b30cedcdcc951c15703152": {
+                                    "action": "BATCH"
+                                  }
+                                }
+                              },
+                              "streamEvents": {
+                                "rules": {
+                                  "15bfcd8a6de1a69c50b30cedcdcc951c15703152": {
+                                    "action": "ALLOW"
+                                  }
+                                }
+                              },
+                              "administrateServer": {
+                                "rules": {
+                                  "53a4f647a89ea57992571187d8025f830625192a": {
+                                    "action": "ALLOW"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "refs/meta/config": {
+                            "permissions": {
+                              "submit": {
+                                "rules": {
+                                  "53a4f647a89ea57992571187d8025f830625192a": {
+                                    "action": "ALLOW"
+                                  },
+                                  "global:Project-Owners": {
+                                    "action": "ALLOW"
+                                  }
+                                }
+                              },
+                              "label-Code-Review": {
+                                "label": "Code-Review",
+                                "rules": {
+                                  "53a4f647a89ea57992571187d8025f830625192a": {
+                                    "action": "ALLOW",
+                                    "min": -2,
+                                    "max": 2
+                                  },
+                                  "global:Project-Owners": {
+                                    "action": "ALLOW",
+                                    "min": -2,
+                                    "max": 2
+                                  }
+                                }
+                              },
+                              "read": {
+                                "exclusive": true,
+                                "rules": {
+                                  "53a4f647a89ea57992571187d8025f830625192a": {
+                                    "action": "ALLOW"
+                                  },
+                                  "global:Project-Owners": {
+                                    "action": "ALLOW"
+                                  }
+                                }
+                              },
+                              "push": {
+                                "rules": {
+                                  "53a4f647a89ea57992571187d8025f830625192a": {
+                                    "action": "ALLOW"
+                                  },
+                                  "global:Project-Owners": {
+                                    "action": "ALLOW"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "refs/for/refs/*": {
+                            "permissions": {
+                              "pushMerge": {
+                                "rules": {
+                                  "global:Registered-Users": {
+                                    "action": "ALLOW"
+                                  }
+                                }
+                              },
+                              "push": {
+                                "rules": {
+                                  "global:Registered-Users": {
+                                    "action": "ALLOW"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "refs/tags/*": {
+                            "permissions": {
+                              "createSignedTag": {
+                                "rules": {
+                                  "53a4f647a89ea57992571187d8025f830625192a": {
+                                    "action": "ALLOW"
+                                  },
+                                  "global:Project-Owners": {
+                                    "action": "ALLOW"
+                                  }
+                                }
+                              },
+                              "createTag": {
+                                "rules": {
+                                  "53a4f647a89ea57992571187d8025f830625192a": {
+                                    "action": "ALLOW"
+                                  },
+                                  "global:Project-Owners": {
+                                    "action": "ALLOW"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "refs/heads/*": {
+                            "permissions": {
+                              "forgeCommitter": {
+                                "rules": {
+                                  "53a4f647a89ea57992571187d8025f830625192a": {
+                                    "action": "ALLOW"
+                                  },
+                                  "global:Project-Owners": {
+                                    "action": "ALLOW"
+                                  }
+                                }
+                              },
+                              "forgeAuthor": {
+                                "rules": {
+                                  "global:Registered-Users": {
+                                    "action": "ALLOW"
+                                  }
+                                }
+                              },
+                              "submit": {
+                                "rules": {
+                                  "53a4f647a89ea57992571187d8025f830625192a": {
+                                    "action": "ALLOW"
+                                  },
+                                  "global:Project-Owners": {
+                                    "action": "ALLOW"
+                                  }
+                                }
+                              },
+                              "editTopicName": {
+                                "rules": {
+                                  "53a4f647a89ea57992571187d8025f830625192a": {
+                                    "action": "ALLOW",
+                                    "force": true
+                                  },
+                                  "global:Project-Owners": {
+                                    "action": "ALLOW",
+                                    "force": true
+                                  }
+                                }
+                              },
+                              "label-Code-Review": {
+                                "label": "Code-Review",
+                                "rules": {
+                                  "global:Registered-Users": {
+                                    "action": "ALLOW",
+                                    "min": -1,
+                                    "max": 1
+                                  },
+                                  "53a4f647a89ea57992571187d8025f830625192a": {
+                                    "action": "ALLOW",
+                                    "min": -2,
+                                    "max": 2
+                                  },
+                                  "global:Project-Owners": {
+                                    "action": "ALLOW",
+                                    "min": -2,
+                                    "max": 2
+                                  }
+                                }
+                              },
+                              "create": {
+                                "rules": {
+                                  "53a4f647a89ea57992571187d8025f830625192a": {
+                                    "action": "ALLOW"
+                                  },
+                                  "global:Project-Owners": {
+                                    "action": "ALLOW"
+                                  }
+                                }
+                              },
+                              "push": {
+                                "rules": {
+                                  "53a4f647a89ea57992571187d8025f830625192a": {
+                                    "action": "ALLOW"
+                                  },
+                                  "global:Project-Owners": {
+                                    "action": "ALLOW"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "refs/*": {
+                            "permissions": {
+                              "read": {
+                                "rules": {
+                                  "global:Anonymous-Users": {
+                                    "action": "ALLOW"
+                                  },
+                                  "53a4f647a89ea57992571187d8025f830625192a": {
+                                    "action": "ALLOW"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "is_owner": true,
+                        "owner_of": [
+                          "GLOBAL_CAPABILITIES",
+                          "refs/meta/config",
+                          "refs/for/refs/*",
+                          "refs/tags/*",
+                          "refs/heads/*",
+                          "refs/*"
+                        ],
+                        "can_upload": true,
+                        "can_add": true,
+                        "can_add_tags": true,
+                        "config_visible": true,
+                        "groups": {
+                          "53a4f647a89ea57992571187d8025f830625192a": {
+                            "url": "#/admin/groups/uuid-53a4f647a89ea57992571187d8025f830625192a",
+                            "options": {},
+                            "description": "Gerrit Site Administrators",
+                            "group_id": 1,
+                            "owner": "Administrators",
+                            "owner_id": "53a4f647a89ea57992571187d8025f830625192a",
+                            "created_on": "2009-06-08 23:31:00.000000000",
+                            "name": "Administrators"
+                          },
+                          "global:Registered-Users": {
+                            "options": {},
+                            "name": "Registered Users"
+                          },
+                          "global:Project-Owners": {
+                            "options": {},
+                            "name": "Project Owners"
+                          },
+                          "15bfcd8a6de1a69c50b30cedcdcc951c15703152": {
+                            "url": "#/admin/groups/uuid-15bfcd8a6de1a69c50b30cedcdcc951c15703152",
+                            "options": {},
+                            "description": "Service accounts that interact with Gerrit",
+                            "group_id": 2,
+                            "owner": "Administrators",
+                            "owner_id": "53a4f647a89ea57992571187d8025f830625192a",
+                            "created_on": "2009-06-08 23:31:00.000000000",
+                            "name": "Service Users"
+                          },
+                          "global:Anonymous-Users": {
+                            "options": {},
+                            "name": "Anonymous Users"
+                          }
+                        }
+                      },
+                      "MyProject": {
+                        "revision": "61157ed63e14d261b6dca40650472a9b0bd88474",
+                        "inherits_from": {
+                          "id": "All-Projects",
+                          "name": "All-Projects",
+                          "description": "Access inherited by all other projects."
+                        },
+                        "local": {},
+                        "is_owner": true,
+                        "owner_of": [
+                          "refs/*"
+                        ],
+                        "can_upload": true,
+                        "can_add": true,
+                        "can_add_tags": true,
+                        "config_visible": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/changes/": {
+      "post": {
+        "summary": "/changes",
+        "x-apifox-folder": "changes",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "Create Change",
+        "tags": [
+          "changes"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "project": {
+                    "type": "string"
+                  },
+                  "subject": {
+                    "type": "string"
+                  },
+                  "branch": {
+                    "type": "string"
+                  },
+                  "topic": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "project",
+                  "subject",
+                  "branch",
+                  "topic",
+                  "status"
+                ],
+                "x-apifox-orders": [
+                  "project",
+                  "subject",
+                  "branch",
+                  "topic",
+                  "status"
+                ],
+                "x-apifox-ignore-properties": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "project": {
+                      "type": "string"
+                    },
+                    "branch": {
+                      "type": "string"
+                    },
+                    "topic": {
+                      "type": "string"
+                    },
+                    "change_id": {
+                      "type": "string"
+                    },
+                    "subject": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    },
+                    "created": {
+                      "type": "string"
+                    },
+                    "updated": {
+                      "type": "string"
+                    },
+                    "mergeable": {
+                      "type": "boolean"
+                    },
+                    "insertions": {
+                      "type": "integer"
+                    },
+                    "deletions": {
+                      "type": "integer"
+                    },
+                    "_number": {
+                      "type": "integer"
+                    },
+                    "owner": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name"
+                      ],
+                      "x-apifox-orders": [
+                        "name"
+                      ],
+                      "x-apifox-ignore-properties": []
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "project",
+                    "branch",
+                    "topic",
+                    "change_id",
+                    "subject",
+                    "status",
+                    "created",
+                    "updated",
+                    "mergeable",
+                    "insertions",
+                    "deletions",
+                    "_number",
+                    "owner"
+                  ],
+                  "x-apifox-orders": [
+                    "id",
+                    "project",
+                    "branch",
+                    "topic",
+                    "change_id",
+                    "subject",
+                    "status",
+                    "created",
+                    "updated",
+                    "mergeable",
+                    "insertions",
+                    "deletions",
+                    "_number",
+                    "owner"
+                  ],
+                  "x-apifox-ignore-properties": []
+                },
+                "examples": {
+                  "1": {
+                    "summary": "成功示例 ",
+                    "value": {
+                      "id": "myProject~master~I8473b95934b5732ac55d26311a706c9c2bde9941",
+                      "project": "myProject",
+                      "branch": "master",
+                      "topic": "create-change-in-browser",
+                      "change_id": "I8473b95934b5732ac55d26311a706c9c2bde9941",
+                      "subject": "Let's support 100% Gerrit workflow direct in browser",
+                      "status": "NEW",
+                      "created": "2014-05-05 07:15:44.639000000",
+                      "updated": "2014-05-05 07:15:44.639000000",
+                      "mergeable": true,
+                      "insertions": 0,
+                      "deletions": 0,
+                      "_number": 4711,
+                      "owner": {
+                        "name": "John Doe"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/changes/{change-id}/message": {
+      "put": {
+        "summary": "/changes/{change-id}/message",
+        "x-apifox-folder": "changes",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "Set Commit Message",
+        "tags": [
+          "changes"
+        ],
+        "parameters": [
+          {
+            "name": "change-id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "message"
+                ],
+                "x-apifox-orders": [
+                  "message"
+                ],
+                "x-apifox-ignore-properties": []
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                },
+                "examples": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}

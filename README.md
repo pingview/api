@@ -57,24 +57,24 @@ kind: api
 metadata:
   name: api
 spec:
-  host: https://gerrit-documentation.storage.googleapis.com/Documentation/3.5.1
+  host: https://gerrit-googlesource.g.globit.com/gerrit/+/refs/tags/v3.5.1/Documentation
   index:
     - name: access
-      page: rest-api-access.html
+      page: rest-api-access.txt
     - name: accounts
-      page: rest-api-accounts.html
+      page: rest-api-accounts.txt
     - name: changes
-      page: rest-api-changes.html
+      page: rest-api-changes.txt
     - name: config
-      page: rest-api-config.html
-    - name: groups
-      page: rest-api-groups.html
-    - name: plugins
-      page: rest-api-plugins.html
-    - name: projects
-      page: rest-api-projects.html
+      page: rest-api-config.txt
     - name: Documentation
-      page: rest-api-documentation.html
+      page: rest-api-documentation.txt
+    - name: groups
+      page: rest-api-groups.txt
+    - name: plugins
+      page: rest-api-plugins.txt
+    - name: projects
+      page: rest-api-projects.txt
 ```
 
 
@@ -87,5 +87,5 @@ Project License can be found [here](LICENSE).
 
 ## Reference
 
-- [gerrit-api](https://gerrit-documentation.storage.googleapis.com/Documentation/3.5.1/rest-api.html)
+- [gerrit-api](https://gerrit-googlesource.g.globit.com/gerrit/+/refs/tags/v3.5.1/Documentation/)
 - [openapis-spec](https://spec.openapis.org/oas/latest.html)

@@ -25,17 +25,17 @@ class Printer(object):
     def format():
         return Printer._format
 
+    @staticmethod
     def _json(self, data, name):
         with open(name, "w", encoding="utf-8") as f:
             f.write(json.dumps(data, ensure_ascii=False, indent=2))
 
-    def _yaml(self, data, name):
+    @staticmethod
+    def _yml(self, data, name):
         with open(name, "w", encoding="utf-8") as f:
-            f.write(yaml.dumps(data, ensure_ascii=False, indent=2))
+            yaml.dump(data, f, default_flow_style=False)
 
-    def run(self, data, name, append=True):
-        if append is True:
-            raise PrinterException("append not supported")
+    def run(self, data, name):
         func = Printer.__dict__.get(os.path.splitext(name)[1].replace(".", "_"), None)
         if func is not None:
             func(self, data, name)

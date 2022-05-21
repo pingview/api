@@ -42,7 +42,9 @@ def test_config():
         assert False
 
     try:
-        config.config_file = os.path.join(os.path.dirname(__file__), "config.yml")
+        config.config_file = os.path.join(
+            os.path.dirname(__file__), "..", "data", "config.yml"
+        )
     except ConfigException as _:
         assert False
     else:

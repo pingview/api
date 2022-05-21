@@ -15,6 +15,16 @@ class MetaData:
     NAME = "name"
 
 
+class Spec:
+    HOST = "host"
+    INDEX = "index"
+
+
+class Index:
+    NAME = "name"
+    PAGE = "page"
+
+
 class ConfigException(Exception):
     def __init__(self, info):
         super().__init__(self)
@@ -38,7 +48,7 @@ class Config(object):
         if not isinstance(name, str) or len(name.strip()) == 0:
             raise ConfigException("config invalid")
         name = name.strip()
-        if not name.endswith(".yml") and not name.endswith(".yaml"):
+        if not name.endswith(".yml"):
             raise ConfigException("suffix invalid")
         if not os.path.exists(name):
             raise ConfigException("%s not found" % name)
@@ -46,6 +56,13 @@ class Config(object):
             self._config_file = yaml.load(file, Loader=yaml.FullLoader)
         if self._config_file is None:
             raise ConfigException("config invalid")
+        if self._config_file.get(ConfigFile.SPEC, None) is None:
+            raise ConfigException("spec invalid")
+        spec = self._config_file[ConfigFile.SPEC]
+        if spec.get(Spec.HOST, None) is None:
+            raise ConfigException("host invalid")
+        if spec.get(Spec.INDEX, None) is None:
+            raise ConfigException("index invalid")
 
     @property
     def output_file(self):
@@ -57,11 +74,7 @@ class Config(object):
             raise ConfigException("output invalid")
         name = name.strip()
         if len(name) != 0:
-            if (
-                not name.endswith(".json")
-                and not name.endswith(".yml")
-                and not name.endswith(".yaml")
-            ):
+            if not name.endswith(".json") and not name.endswith(".yml"):
                 raise ConfigException("suffix invalid")
             if os.path.exists(name):
                 raise ConfigException("%s already exist" % name)
