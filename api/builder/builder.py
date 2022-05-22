@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
+
 import json
+import re
 
 from api.config.config import ConfigFile, Spec, Index
 
@@ -232,9 +234,8 @@ class Builder(object):
                 }
             }
 
-        def _param_helper(data, parser):
-            # TODO
-            return [
+        def _param_helper(param, prop):
+            buf = [
                 {
                     "name": "Content-Type",
                     "in": "header",
@@ -242,25 +243,60 @@ class Builder(object):
                     "required": False,
                     "example": "application/json",
                     "schema": {"type": "string"},
-                }
+                },
             ]
+            if len(param) != 0 and len(prop) != 0:
+                buf.append(
+                    {
+                        "name": param,
+                        "in": prop,
+                        "description": "",
+                        "required": False,
+                        "schema": {"type": "string"},
+                    }
+                )
+            return buf
+
+        def _parse_api(data):
+            """
+            /access/?project=link:rest-api-projects.html#project-name[\{project-name\}]
+                "in": "query"
+            /changes/link:#change-id[\{change-id\}]
+                "in": "path"
+            /changes/link:#change-id[\{change-id\}]/message
+                "in": "path"
+            """
+            buf = data.replace("\}]", "}")
+            api = re.sub(r"link:.+\[\\", "", buf)
+            if "?" in api:
+                param = api.split("?")[1].split("=")[0]
+                prop = "query"
+            elif "{" in api and "}" in api:
+                param = re.findall(r"{.+?}", api)[0].lstrip("{").rstrip("}")
+                prop = "path"
+            else:
+                param = ""
+                prop = ""
+            return api, param, prop
 
         def _api_helper(data, path, parser):
             op = data[parser["name"]["start"]].split()[0].lstrip("'").strip().lower()
-            api = data[parser["name"]["start"]].split()[1].rstrip("'").strip()
+            api, param, prop = _parse_api(
+                data[parser["name"]["start"]].split()[1].rstrip("'").strip()
+            )
             description = (
                 data[parser["description"]["start"]].replace("===", "").strip()
             )
             return {
                 api: {
                     op: {
-                        "summary": path,
+                        "summary": api,
                         "x-apifox-folder": path.lstrip("/"),
                         "x-apifox-status": "developing",
                         "deprecated": False,
                         "description": description,
                         "tags": [path.lstrip("/")],
-                        "parameters": _param_helper(data, parser),
+                        "parameters": _param_helper(param, prop),
                         "requestBody": _request_helper(data, parser),
                         "responses": _responses_helper(data, parser),
                     }

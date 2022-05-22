@@ -2,7 +2,7 @@
   "changes": {
     "/changes/": {
       "post": {
-        "summary": "/changes",
+        "summary": "/changes/",
         "x-apifox-folder": "changes",
         "x-apifox-status": "developing",
         "deprecated": false,
