@@ -44,20 +44,8 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "project",
-                  "subject",
-                  "branch",
-                  "topic",
-                  "status"
-                ],
-                "x-apifox-orders": [
-                  "project",
-                  "subject",
-                  "branch",
-                  "topic",
-                  "status"
-                ],
+                "required": [],
+                "x-apifox-orders": [],
                 "x-apifox-ignore-properties": []
               }
             }
@@ -117,52 +105,18 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "name"
-                      ],
-                      "x-apifox-orders": [
-                        "name"
-                      ],
+                      "required": [],
+                      "x-apifox-orders": [],
                       "x-apifox-ignore-properties": []
                     }
                   },
-                  "required": [
-                    "id",
-                    "project",
-                    "branch",
-                    "topic",
-                    "change_id",
-                    "subject",
-                    "status",
-                    "created",
-                    "updated",
-                    "mergeable",
-                    "insertions",
-                    "deletions",
-                    "_number",
-                    "owner"
-                  ],
-                  "x-apifox-orders": [
-                    "id",
-                    "project",
-                    "branch",
-                    "topic",
-                    "change_id",
-                    "subject",
-                    "status",
-                    "created",
-                    "updated",
-                    "mergeable",
-                    "insertions",
-                    "deletions",
-                    "_number",
-                    "owner"
-                  ],
+                  "required": [],
+                  "x-apifox-orders": [],
                   "x-apifox-ignore-properties": []
                 },
                 "examples": {
                   "1": {
-                    "summary": "成功示例 ",
+                    "summary": "成功示例",
                     "value": {
                       "id": "myProject~master~I8473b95934b5732ac55d26311a706c9c2bde9941",
                       "project": "myProject",

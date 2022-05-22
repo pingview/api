@@ -1,6 +1,15 @@
 # -*- coding: utf-8 -*-
+import json
 
 from api.config.config import ConfigFile, Spec, Index
+
+types = {
+    "bool": "boolean",
+    "dict": "object",
+    "int": "integer",
+    "list": "array",
+    "str": "string",
+}
 
 
 class BuilderException(Exception):
@@ -147,8 +156,124 @@ class Builder(object):
         return buf
 
     def _build(self, data, parser):
+        def _reflect_helper(data):
+            buf = {"type": types[type(data).__name__]}
+            if isinstance(data, dict):
+                prop = {}
+                for key, val in data.items():
+                    prop[key] = _reflect_helper(val)
+                buf["properties"] = prop
+                buf["required"] = []
+                buf["x-apifox-orders"] = []
+                buf["x-apifox-ignore-properties"] = []
+            return buf
+
+        def _properties_helper(data, parser, _type):
+            s = 0
+            for i in range(parser[_type]["start"], parser[_type]["end"]):
+                if len(data[i].strip()) == 0:
+                    if data[i + 1].strip() == ")]}'":
+                        s = i + 2
+                    elif data[i + 1].strip() == "{":
+                        s = i + 1
+                    break
+            buf = json.loads("".join(data[s : parser[_type]["end"]]))
+            prop = {}
+            for key, val in buf.items():
+                prop[key] = _reflect_helper(val)
+            return prop
+
+        def _example_helper(data, parser):
+            s = 0
+            for i in range(parser["response"]["start"], parser["response"]["end"]):
+                if data[i].strip() == ")]}'":
+                    s = i + 1
+                    break
+            return json.loads("".join(data[s : parser["response"]["end"]]))
+
+        def _responses_helper(data, parser):
+            return {
+                "200": {
+                    "description": "成功",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": _properties_helper(
+                                    data, parser, "response"
+                                ),
+                                "required": [],
+                                "x-apifox-orders": [],
+                                "x-apifox-ignore-properties": [],
+                            },
+                            "examples": {
+                                "1": {
+                                    "summary": "成功示例",
+                                    "value": _example_helper(data, parser),
+                                }
+                            },
+                        }
+                    },
+                }
+            }
+
+        def _request_helper(data, parser):
+            return {
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": _properties_helper(data, parser, "request"),
+                            "required": [],
+                            "x-apifox-orders": [],
+                            "x-apifox-ignore-properties": [],
+                        }
+                    }
+                }
+            }
+
+        def _param_helper(data, parser):
+            # TODO
+            return [
+                {
+                    "name": "Content-Type",
+                    "in": "header",
+                    "description": "",
+                    "required": False,
+                    "example": "application/json",
+                    "schema": {"type": "string"},
+                }
+            ]
+
+        def _api_helper(data, path, parser):
+            op = data[parser["name"]["start"]].split()[0].lstrip("'").strip().lower()
+            api = data[parser["name"]["start"]].split()[1].rstrip("'").strip()
+            description = (
+                data[parser["description"]["start"]].replace("===", "").strip()
+            )
+            return {
+                api: {
+                    op: {
+                        "summary": path,
+                        "x-apifox-folder": path.lstrip("/"),
+                        "x-apifox-status": "developing",
+                        "deprecated": False,
+                        "description": description,
+                        "tags": [path.lstrip("/")],
+                        "parameters": _param_helper(data, parser),
+                        "requestBody": _request_helper(data, parser),
+                        "responses": _responses_helper(data, parser),
+                    }
+                }
+            }
+
         buf = {}
-        # TODO
+        path = data[parser["path"]["name"]["start"]].split()[-3].rstrip("/").strip()
+        for ep in parser["endpoints"]:
+            for api in ep["apis"]:
+                b = _api_helper(data, path, api)
+                buf = buf | b
+
         return buf
 
     def _append(self, data):

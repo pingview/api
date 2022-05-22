@@ -25,12 +25,10 @@ class Printer(object):
     def format():
         return Printer._format
 
-    @staticmethod
     def _json(self, data, name):
         with open(name, "w", encoding="utf-8") as f:
             f.write(json.dumps(data, ensure_ascii=False, indent=2))
 
-    @staticmethod
     def _yml(self, data, name):
         with open(name, "w", encoding="utf-8") as f:
             yaml.dump(data, f, default_flow_style=False)

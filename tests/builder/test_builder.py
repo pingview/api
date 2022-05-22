@@ -45,10 +45,28 @@ def test_parse():
 def test_build():
     builder = init_builder()
 
-    buf = {}
-    p = {}
-    b = builder._build(buf, p)
-    assert True
+    name = os.path.join(os.path.dirname(__file__), "..", "data", "gerritapi-post.txt")
+    with open(name, encoding="utf-8") as f:
+        buf = f.readlines()
+
+    name = os.path.join(os.path.dirname(__file__), "..", "data", "gerritapi-parse.json")
+    with open(name, encoding="utf-8") as f:
+        parser = json.load(f)
+
+    name = os.path.join(os.path.dirname(__file__), "..", "data", "gerritapi-build.json")
+    with open(name, encoding="utf-8") as f:
+        wanted = json.load(f)
+
+    buf = builder._build(buf, parser)
+    res = {"changes": buf}
+
+    """ For debugging only
+    name = os.path.join(os.path.dirname(__file__), "..", "data", "output-build.json")
+    with open(name, "w", encoding="utf-8") as f:
+        f.write(json.dumps(res, ensure_ascii=False, indent=4))
+    """
+
+    assert res == wanted
 
 
 def test_append():
