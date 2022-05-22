@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import json
 import os
 
 from api.builder.builder import Builder, BuilderException
@@ -30,9 +30,16 @@ def init_builder():
 def test_parse():
     builder = init_builder()
 
-    buf = {}
-    p = builder._parse(buf)
-    assert True
+    name = os.path.join(os.path.dirname(__file__), "..", "data", "gerritapi-post.txt")
+    with open(name, encoding="utf-8") as f:
+        buf = f.readlines()
+
+    name = os.path.join(os.path.dirname(__file__), "..", "data", "gerritapi-parse.json")
+    with open(name, encoding="utf-8") as f:
+        wanted = json.load(f)
+
+    res = builder._parse(buf)
+    assert res == wanted
 
 
 def test_build():
