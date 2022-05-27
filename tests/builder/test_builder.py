@@ -74,4 +74,4 @@ def test_append():
 
     buf = {}
     ret = builder._append(buf)
-    assert True
+    assert ret["openapi"] == "3.0.1"

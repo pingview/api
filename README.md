@@ -57,7 +57,7 @@ kind: api
 metadata:
   name: api
 spec:
-  host: https://gerrit-googlesource.g.globit.com/gerrit/+/refs/tags/v3.5.1/Documentation
+  host: https://gerrit-googlesource.g.globit.com/gerrit/+/refs/tags/v3.6.0/Documentation
   index:
     - name: access
       page: rest-api-access.txt
@@ -87,5 +87,5 @@ Project License can be found [here](LICENSE).
 
 ## Reference
 
-- [gerrit-api](https://gerrit-googlesource.g.globit.com/gerrit/+/refs/tags/v3.5.1/Documentation/)
+- [gerrit-api](https://gerrit-googlesource.g.globit.com/gerrit/+/refs/tags/v3.6.0/Documentation/)
 - [openapis-spec](https://spec.openapis.org/oas/latest.html)
