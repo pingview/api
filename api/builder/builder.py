@@ -187,9 +187,16 @@ class Builder(object):
             if not found:
                 return {}
             prop = {}
-            buf = json.loads("".join(data[s : parser[_type]["end"]]))
-            for key, val in buf.items():
-                prop[key] = _reflect_helper(val)
+            try:
+                buf = json.loads("".join(data[s : parser[_type]["end"]]))
+                for key, val in buf.items():
+                    prop[key] = _reflect_helper(val)
+            except json.decoder.JSONDecodeError as _:
+                print("FAIL: start: %d end: %d" % (s, parser[_type]["end"]))
+                return {}
+            except AttributeError as _:
+                print("FAIL: start: %d end: %d" % (s, parser[_type]["end"]))
+                return {}
             return prop
 
         def _example_helper(data, parser):
@@ -198,7 +205,12 @@ class Builder(object):
                 if data[i].strip() == ")]}'":
                     s = i + 1
                     break
-            return json.loads("".join(data[s : parser["response"]["end"]]))
+            try:
+                example = json.loads("".join(data[s : parser["response"]["end"]]))
+            except json.decoder.JSONDecodeError as _:
+                print("FAIL: start: %d end: %d" % (s, parser["response"]["end"]))
+                return {}
+            return example
 
         def _responses_helper(data, parser):
             return {
