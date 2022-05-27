@@ -31,11 +31,11 @@ class Builder(object):
         self._index = spec[Spec.INDEX]
 
     def run(self, data):
-        buf = data.splitlines()
         ret = {}
         for item in self._index:
-            p = self._parse(buf[item[Index.NAME]])
-            ret[item[Index.NAME]] = self._build(buf[item[Index.NAME]], p)
+            b = data[item[Index.NAME]].splitlines()
+            p = self._parse(b)
+            ret[item[Index.NAME]] = self._build(b, p)
         return self._append(ret)
 
     def _parse(self, data):
@@ -172,15 +172,22 @@ class Builder(object):
 
         def _properties_helper(data, parser, _type):
             s = 0
+            found = False
             for i in range(parser[_type]["start"], parser[_type]["end"]):
                 if len(data[i].strip()) == 0:
                     if data[i + 1].strip() == ")]}'":
                         s = i + 2
+                        found = True
                     elif data[i + 1].strip() == "{":
                         s = i + 1
+                        found = True
+                    else:
+                        pass
                     break
-            buf = json.loads("".join(data[s : parser[_type]["end"]]))
+            if not found:
+                return {}
             prop = {}
+            buf = json.loads("".join(data[s : parser[_type]["end"]]))
             for key, val in buf.items():
                 prop[key] = _reflect_helper(val)
             return prop
